@@ -2,6 +2,7 @@ import { useEffect, useState } from "react"
 import { User } from "../types"
 import axios from "axios";
 import UserCard from "../components/UserCard";
+import Loader from "../components/Loader";
 
 export default function LandingPage() {
     const [userDetails, setUserDetails] = useState<User[]>([]);
@@ -23,9 +24,9 @@ export default function LandingPage() {
   return (
     <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 p-5">
         {!loadingData && userDetails.map(user => (
-            <UserCard id={user.id} name={user.name} email={user.email} />
+            <UserCard id={user.id as number} name={user.name as string} email={user.email as string} />
         ))}
-        {loadingData && <div>Loading...</div>}
+        {loadingData && <Loader/>}
     </div>
   )
 }

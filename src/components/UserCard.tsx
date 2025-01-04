@@ -17,7 +17,7 @@ const UserCard: React.FC<UserCardProps> = ({ id, name, email }) => {
                 <h3 className="text-lg font-semibold text-gray-800">{name}</h3>
                 <p className="text-sm text-gray-600">{email}</p>
                 <div className="flex mt-5 ">
-                    <Link to={`/user/${id}`} className="ms-auto inline-block bg-blue-600 text-sm text-white rounded-md p-2 hover:text-blue-800" >
+                    <Link to={`/user/${id}`} className="ms-auto inline-block bg-blue-600 hover:bg-blue-700 text-sm text-white rounded-md p-2" >
                         View Details →
                     </Link>
                 </div>
